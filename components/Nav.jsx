@@ -15,7 +15,6 @@ const Nav = () => {
                     <Link href="/about" className="flex-center outline_btn">About</Link>
                 </div>
 
-
             </div>
         </nav>
     )

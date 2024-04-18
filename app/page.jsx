@@ -1,21 +1,25 @@
 "use client";
 import Form from "@components/Form";
 import { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+
+//pagination
+//filters
+//logos and placards
+//search again on nav based on page??
+//
 
 const Home = () => {
     const [submitting, setSubmitting] = useState(false);
     const [postcode, setPostcode] = useState({ postcode: ''});
+    const router = useRouter();
 
-    const search = async (e) => {
+    const search = (e) => {
         e.preventDefault();
         setSubmitting(true);
         try {
-            const response = await fetch(`https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/${postcode.postcode}`);
-            const data = await response.json();
-            console.log(data);
-            alert("Data fetched successfully")
-            setSubmitting(false);
-
+            router.push(`/search/${postcode.postcode}`);
         } catch (error) {
             console.log(error);
         }
