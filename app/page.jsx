@@ -1,14 +1,17 @@
 "use client";
-import Form from "@components/Form";
+
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import PromptCard from "@components/PromptCard";
+import {NextUIProvider} from "@nextui-org/react";
 
 //pagination
 //filters
 //logos and placards
 //search again on nav based on page??
-//
+//grids for serach page
+//error handling for wrong postcode
 
 const Home = () => {
     const [submitting, setSubmitting] = useState(false);
