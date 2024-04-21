@@ -2,6 +2,7 @@ class RestaurantClient {
   constructor (baseURL) {
     this.baseURL = baseURL
   }
+
   /**
    * Asynchronous function to fetch restaurant data based on a given postcode.
    * @param {string} postcode - The postcode to fetch restaurant data for.

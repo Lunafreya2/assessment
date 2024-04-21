@@ -8,7 +8,7 @@ import { Progress } from "@nextui-org/react";
 import {Breadcrumbs, BreadcrumbItem} from "@nextui-org/react";
 import {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button} from "@nextui-org/react";
 import {Input} from "@nextui-org/react";
-
+import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure} from "@nextui-org/react";
 
 
 const POST =  () => {
@@ -57,6 +57,21 @@ const POST =  () => {
         className="max-w-md"
     />
 
+    if (data.length === 0) {
+        return <Modal defaultOpen={true}>
+            <ModalContent>
+                <ModalHeader className="flex flex-col gap-1">Error</ModalHeader>
+                <ModalBody>
+                    <p className="text-center">
+                        No restaurants found for the postcode: {postcode.toUpperCase()}
+                    </p>
+                </ModalBody>
+                <ModalFooter>
+                    <Button color={"danger"} onClick={() => router.push('/')}>Search Again</Button>
+                </ModalFooter>
+            </ModalContent>
+        </Modal>
+    }
 
     const scrollToTop = (page) => {
         setPage(page)
