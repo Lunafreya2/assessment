@@ -5,7 +5,6 @@ import PromptCard from "@components/PromptCard";
 import {NextUIProvider} from "@node_modules/@nextui-org/react";
 import {Pagination, Skeleton} from "@nextui-org/react";
 import { Progress } from "@nextui-org/react";
-import Sidebar from "@components/SideBar";
 import {Breadcrumbs, BreadcrumbItem} from "@nextui-org/react";
 import {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button} from "@nextui-org/react";
 import {Input} from "@nextui-org/react";
@@ -23,14 +22,24 @@ const POST =  () => {
     const indexOfLastCard = page * cardPerPage
     const indexOfFirstCard = indexOfLastCard - cardPerPage
     const currentCards = data.slice(indexOfFirstCard, indexOfLastCard)
-    // const [selectedCuisine, setSelectedCuisine] = useState(null)
-    // const [selectedRating, setSelectedRating] = useState(null)
     const [sortedData, setSortedData] = useState([]);
     const router = useRouter();
     const [postcodeForSearch, setPostcode] = useState({ postcode: ''});
 
 
-
+    /**
+     * useEffect hook for fetching restaurant data based on postcode.
+     * This hook runs once after the component mounts (due to the empty dependency array).
+     *
+     * The fetch request is made to the `/api/search/${postcode}` endpoint.
+     *
+     * The response from the fetch request is then converted to JSON.
+     *
+     * The JSON data is then used to update the state of the component:
+     * - The `restaurants` property of the data is used to update the `data` state.
+     * - The `cuisineDetails` property of the `metaData` property of the data is used to update the `cusines` state.
+     * - The `setLoading` function is called with `false` to indicate that the data has finished loading.
+     */
     useEffect(() => {
         fetch(`/api/search/${postcode}`)
             .then((res) => res.json()).then((data) => {
@@ -47,7 +56,6 @@ const POST =  () => {
         aria-label="Loading..."
         className="max-w-md"
     />
-    if (!data) return <p>No profile data</p>
 
 
     const scrollToTop = (page) => {

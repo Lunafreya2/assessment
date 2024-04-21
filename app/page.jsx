@@ -7,10 +7,9 @@ import PromptCard from "@components/PromptCard";
 import {NextUIProvider} from "@nextui-org/react";
 
 
-//search again on nav based on page??
-//grids for serach page
+
 //error handling for wrong postcode/what if api not available 500
-//linters
+
 //testcases
 //write the requiremetns
 //
@@ -23,10 +22,7 @@ import {NextUIProvider} from "@nextui-org/react";
 //what if the user enters a wrong postcode
 //what if the user enters a postcode that doesn't have any restaurants
 //storyboaard
-//queryparams
-//skeleton
-//sorting
-//modal
+
 
 
 const Home = () => {

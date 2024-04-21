@@ -52,10 +52,8 @@ const PromptCard = ({data}) => {
                 <Divider/>
                 <CardFooter>
                 <p className="text-sm">Rating: {data.rating.starRating} {rating(data.rating.starRating)}</p>
-
                 </CardFooter>
             </Card>
-
     );
 }
 
