@@ -6,12 +6,28 @@ import { useRouter } from "next/navigation";
 import PromptCard from "@components/PromptCard";
 import {NextUIProvider} from "@nextui-org/react";
 
-//pagination
-//filters
-//logos and placards
+
 //search again on nav based on page??
 //grids for serach page
-//error handling for wrong postcode
+//error handling for wrong postcode/what if api not available 500
+//linters
+//testcases
+//write the requiremetns
+//
+// mirror all of the roles (PM, etc look them up)
+//
+// when you're having a discussiion, listen and then give ideas,
+//
+// never do anything solo in a team
+//edgecases
+//what if the user enters a wrong postcode
+//what if the user enters a postcode that doesn't have any restaurants
+//storyboaard
+//queryparams
+//skeleton
+//sorting
+//modal
+
 
 const Home = () => {
     const [submitting, setSubmitting] = useState(false);
@@ -22,7 +38,8 @@ const Home = () => {
         e.preventDefault();
         setSubmitting(true);
         try {
-            router.push(`/search/${postcode.postcode}`);
+            let cleanedPostcode = postcode.postcode.replace(/\s/g, '');
+            router.push(`/search/${cleanedPostcode}`);
         } catch (error) {
             console.log(error);
         }
@@ -34,18 +51,15 @@ const Home = () => {
                 Takeaway Coding Assignment
             </h1>
             <span className="orange_gradient text-center text-xl">Saad Khalil</span>
-            <p>
-                This is a coding assignment for Takeaway.com
-            </p>
             <br/>
-            <form className="mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism" onSubmit={search}>
+            <form className="mt-10 w-full max-w-2xl flex flex-col gap-3 glassmorphism" onSubmit={search}>
                 <label className="font-satoshi font-semibold text-base text-gray-700">
                     <span>Find Nearby Restaurants</span>
                     <input className="w-full flex rounded-lg mt-2 p-3 text-sm text-gray-500 outline-0 h-[50px]" required value={postcode.postcode} onChange={(e) => setPostcode({...postcode, postcode: e.target.value})} placeholder="Enter your postcode"></input>
                 </label>
 
                 <div>
-                    <button className=" bg-primary-orange text-white rounded-lg p-3 text-sm font-semibold"
+                    <button className=" bg-primary-orange text-white rounded-lg p-2 text-sm font-semibold"
                             type="submit" disabled={submitting}> Search
                     </button>
                 </div>
