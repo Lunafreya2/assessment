@@ -31,6 +31,12 @@ The application is deployed on [Vercel](https://assessment-dusky-two.vercel.app/
 
 ## Run Locally
 
+### Prerequisities 
+
+Node.js 18.17 or later.
+
+### Installation
+
 Clone the project
 
 ```
@@ -50,11 +56,24 @@ Install dependencies
   npm install
 ```
 
-Start the server
+Build
+
+```
+  npm run build
+```
+Run
+
+```
+  npm start
+```
+
+
+### Development 
 
 ```
   npm run dev
 ```
+### Testing
 
 Start the tests
 
@@ -81,7 +100,7 @@ The application will start on [localhost:3000](http://localhost:3000)
 
 #### Get all restaurants from postcode
 
-```http
+```
     GET /search/${Postcode}
 ```
 
