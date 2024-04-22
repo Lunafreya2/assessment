@@ -13,6 +13,7 @@ To deploy this project run
 
 
 ## Demo
+https://github.com/Lunafreya2/assessment/assets/73529539/7ba96c05-7518-468a-a9b3-46230a74d221
 
-[Demo](demo.mp4)
+
 
