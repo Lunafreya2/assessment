@@ -31,5 +31,8 @@ const restaurantClient = new RestaurantClient('https://uk.api.just-eat.io')
 
 export async function GET (request, { params }) {
   const data = await restaurantClient.getRestaurants(params.postcode)
+  if (data.message === 'uri not found' || data.metaData.location == null) {
+    return new Response(JSON.stringify({}), { status: 404 })
+  }
   return new Response(JSON.stringify(data), { status: 200 })
 }

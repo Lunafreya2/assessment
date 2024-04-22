@@ -43,8 +43,8 @@ const POST =  () => {
     useEffect(() => {
         fetch(`/api/search/${postcode}`)
             .then((res) => res.json()).then((data) => {
-            setData(data.restaurants)
-            setCusines(data.metaData.cuisineDetails)
+            setData(data.restaurants === undefined ? [] : data.restaurants)
+            setCusines(data.metaData === undefined ? [] : data.metaData.cuisineDetails)
             setLoading(false)
         })
     }, [])
