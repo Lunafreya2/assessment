@@ -107,7 +107,7 @@ const POST =  () => {
                 </form>
 
             </div>
-            <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-2">
+            <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-2">
                 {/*<Sidebar cuisines={cusines} setSelectedCuisine={setSelectedCuisine} />*/}
                 {currentCards.map((restaurant) => (<Skeleton className="rounded-3xl" isLoaded={!isLoading}><PromptCard data={restaurant} /></Skeleton>))}
             </div>
