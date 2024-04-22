@@ -6,25 +6,6 @@ import { useRouter } from "next/navigation";
 import PromptCard from "@components/PromptCard";
 import {NextUIProvider} from "@nextui-org/react";
 
-
-
-//error handling for wrong postcode/what if api not available 500
-
-//testcases
-//write the requiremetns
-//
-// mirror all of the roles (PM, etc look them up)
-//
-// when you're having a discussiion, listen and then give ideas,
-//
-// never do anything solo in a team
-//edgecases
-//what if the user enters a wrong postcode
-//what if the user enters a postcode that doesn't have any restaurants
-//storyboaard
-
-
-
 const Home = () => {
     const [submitting, setSubmitting] = useState(false);
     const [postcode, setPostcode] = useState({ postcode: ''});
