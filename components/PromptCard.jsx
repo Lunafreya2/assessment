@@ -26,7 +26,7 @@ const PromptCard = ({data}) => {
                     <div className="flex flex-col w-full">
                         <p className="text-md">{data.name}</p>
                         <div className="flex flex-row justify-between ">
-                            <p className="text-sm text-default-500 overflow-hidden whitespace-nowrap text-ellipsis"> {data.address.firstLine} {data.address.city} {data.address.postCode}</p>
+                            <p className="text-sm text-default-500 overflow-hidden whitespace-nowrap text-ellipsis"> {data.address.firstLine} {data.address.city} {data.address.postalCode}</p>
                             <div className="flex gap-1">
                                 {data.cuisines.map((cuisine) => {
                                     if (cuisine.name === 'Deals' || cuisine.name === 'Collect stamps') {
